@@ -12,20 +12,24 @@
 	<dict>
 		<key>985AE7FE0FF67FC4F073DA444C2FF2DD83F2D6B4</key>
 		<string>https://github.com/donnki/FasterGameEngine.git</string>
+		<key>99767F64E926A4B8473C817C8C73DE2D8CF0E36F</key>
+		<string>https://github.com/donnki/FGEPlugins-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FGEPluginsDemo/FGEPluginsDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>985AE7FE0FF67FC4F073DA444C2FF2DD83F2D6B4</key>
+		<string>../../../../FasterGameEngine</string>
+		<key>99767F64E926A4B8473C817C8C73DE2D8CF0E36F</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/donnki/FasterGameEngine.git</string>
+	<string>https://github.com/donnki/FGEPlugins-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>985AE7FE0FF67FC4F073DA444C2FF2DD83F2D6B4</string>
+	<string>99767F64E926A4B8473C817C8C73DE2D8CF0E36F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>985AE7FE0FF67FC4F073DA444C2FF2DD83F2D6B4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>FasterGameEngine</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>99767F64E926A4B8473C817C8C73DE2D8CF0E36F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FGEPlugins-iOS</string>
 		</dict>
 	</array>
 </dict>

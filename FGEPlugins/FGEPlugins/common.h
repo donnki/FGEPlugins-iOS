@@ -12,6 +12,8 @@
 #define TALKINGDATA_APP_ID @"3B8DCFBDE5D5B9858C1DB06D09CE0BC0"
 #define TALKINGDATA_CHANNEL_ID @"TEST_CHANNEL"
 #define ADMOB_INTERSTITIAL_ID @"ca-app-pub-2550536070025080/1660836858"
+#define GAMECENTER_LEADERBOARD_ID @"com.banabala.jellyddd.scoreleaderboard"
+#define GAMECENTER_ACHIEVEMENT_IDS @[@"com.banabala.jellyddd.achievement.bomb100"]
 
 typedef void(^operationCallback)(NSDictionary *param);
 @protocol PluginProtocol <NSObject>

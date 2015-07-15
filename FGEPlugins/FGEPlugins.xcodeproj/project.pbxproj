@@ -26,6 +26,9 @@
 		7F6130971B53707F000D2642 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6130841B53707F000D2642 /* RMStore.m */; };
 		7FAD56A01B56008C003A14C8 /* libTalkingDataGA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD569E1B56008C003A14C8 /* libTalkingDataGA.a */; };
 		7FAD56B71B563689003A14C8 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56B61B563689003A14C8 /* GoogleMobileAds.framework */; };
+		7FAD56F41B567DF1003A14C8 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD56EF1B567DF1003A14C8 /* GameCenterManager.m */; };
+		7FAD56F51B567DF1003A14C8 /* NSDataAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD56F11B567DF1003A14C8 /* NSDataAES256.m */; };
+		7FAD56F61B567DF1003A14C8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD56F31B567DF1003A14C8 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +158,12 @@
 		7FAD569E1B56008C003A14C8 /* libTalkingDataGA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingDataGA.a; sourceTree = "<group>"; };
 		7FAD569F1B56008C003A14C8 /* TalkingDataGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingDataGA.h; sourceTree = "<group>"; };
 		7FAD56B61B563689003A14C8 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		7FAD56EE1B567DF1003A14C8 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		7FAD56EF1B567DF1003A14C8 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		7FAD56F01B567DF1003A14C8 /* NSDataAES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAES256.h; sourceTree = "<group>"; };
+		7FAD56F11B567DF1003A14C8 /* NSDataAES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAES256.m; sourceTree = "<group>"; };
+		7FAD56F21B567DF1003A14C8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7FAD56F31B567DF1003A14C8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +247,7 @@
 		7F6130211B53707F000D2642 /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				7FAD56ED1B567DF1003A14C8 /* GC Manager */,
 				7FAD56B61B563689003A14C8 /* GoogleMobileAds.framework */,
 				7FAD569D1B56008C003A14C8 /* TalkingData */,
 				7F43A0C41B53B58F00BD2DDC /* MBProgressHUD */,
@@ -395,6 +405,19 @@
 			path = TalkingData;
 			sourceTree = "<group>";
 		};
+		7FAD56ED1B567DF1003A14C8 /* GC Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7FAD56EE1B567DF1003A14C8 /* GameCenterManager.h */,
+				7FAD56EF1B567DF1003A14C8 /* GameCenterManager.m */,
+				7FAD56F01B567DF1003A14C8 /* NSDataAES256.h */,
+				7FAD56F11B567DF1003A14C8 /* NSDataAES256.m */,
+				7FAD56F21B567DF1003A14C8 /* Reachability.h */,
+				7FAD56F31B567DF1003A14C8 /* Reachability.m */,
+			);
+			path = "GC Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -461,10 +484,13 @@
 				7F6130971B53707F000D2642 /* RMStore.m in Sources */,
 				7F6130191B536FA2000D2642 /* CommonHelper.m in Sources */,
 				7F6130931B53707F000D2642 /* RMStoreTransactionReceiptVerificator.m in Sources */,
+				7FAD56F51B567DF1003A14C8 /* NSDataAES256.m in Sources */,
 				7F6130171B536FA2000D2642 /* AppStoreIAPPlugin.mm in Sources */,
+				7FAD56F41B567DF1003A14C8 /* GameCenterManager.m in Sources */,
 				7F6130951B53707F000D2642 /* RMStoreUserDefaultsPersistence.m in Sources */,
 				7F61308B1B53707F000D2642 /* RMAppReceipt.m in Sources */,
 				7F43A0C71B53B5A300BD2DDC /* MBProgressHUD.m in Sources */,
+				7FAD56F61B567DF1003A14C8 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,12 +30,12 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setFrame:CGRectMake(100, 100, 100, 100)];
-    [button setTitle:@"buy sth" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(onBuySth:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"do something" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(onDoSth:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
 
--(void)onBuySth:(id)sender{
+-(void)onDoSth:(id)sender{
 //    NSLog(@"onBuySth:%@", [_products objectAtIndex:0]);
 //    [StatisticPlugin onStatisticEvent:@{
 //                                        @"eventId":@"TestEvent",
@@ -48,7 +48,8 @@
 //    })
 //                                       }
 //     ];
-    [AdmobPlugin showInterstitialAD:nil];
+    [GameCenterServicePlugin showLeaderboards:nil];
+//    [AdmobPlugin showInterstitialAD:nil];
 }
 
 - (void)didReceiveMemoryWarning {

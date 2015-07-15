@@ -28,6 +28,7 @@
 		7FAD56C31B563E10003A14C8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56BF1B563DCE003A14C8 /* EventKit.framework */; };
 		7FAD56C51B563E2B003A14C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */; };
 		7FAD56C71B563E35003A14C8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56C61B563E35003A14C8 /* MessageUI.framework */; };
+		7FAD56F81B568023003A14C8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56F71B568023003A14C8 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		7FAD56C11B563E08003A14C8 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7FAD56C61B563E35003A14C8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		7FAD56F71B568023003A14C8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAD56F81B568023003A14C8 /* GameKit.framework in Frameworks */,
 				7FAD56C71B563E35003A14C8 /* MessageUI.framework in Frameworks */,
 				7FAD56C51B563E2B003A14C8 /* AudioToolbox.framework in Frameworks */,
 				7FAD56C31B563E10003A14C8 /* EventKit.framework in Frameworks */,
@@ -112,6 +115,7 @@
 		7F612F801B53557B000D2642 = {
 			isa = PBXGroup;
 			children = (
+				7FAD56F71B568023003A14C8 /* GameKit.framework */,
 				7FAD56C61B563E35003A14C8 /* MessageUI.framework */,
 				7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */,
 				7FAD56C11B563E08003A14C8 /* EventKitUI.framework */,

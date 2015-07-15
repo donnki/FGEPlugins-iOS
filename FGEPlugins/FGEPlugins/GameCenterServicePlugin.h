@@ -11,4 +11,8 @@
 
 @interface GameCenterServicePlugin : NSObject<PluginProtocol>
 
+SHARED_INSTANCE_DEF
+
++(void)showAchievements:(NSDictionary*)info;
++(void)showLeaderboards:(NSDictionary*)info;
 @end

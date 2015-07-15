@@ -25,6 +25,10 @@
         [[AdmobPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
     }
     
+    if ([[GameCenterServicePlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
+        [[GameCenterServicePlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
+    }
+    
     
 }
 +(void)onStart{
