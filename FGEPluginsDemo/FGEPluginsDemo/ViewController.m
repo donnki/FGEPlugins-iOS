@@ -48,7 +48,9 @@
 //    })
 //                                       }
 //     ];
-    [GameCenterServicePlugin showLeaderboards:nil];
+//    [GameCenterServicePlugin showLeaderboards:nil];
+    [GameCenterServicePlugin loadLeaderboardScore:@{@"leaderboardID": GAMECENTER_LEADERBOARD_ID}];
+//    [GameCenterServicePlugin submitLeaderboardScore:@{@"leaderboardID": GAMECENTER_LEADERBOARD_ID, @"score": [NSNumber numberWithInt:1984]}];
 //    [AdmobPlugin showInterstitialAD:nil];
 }
 

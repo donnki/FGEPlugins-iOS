@@ -7,8 +7,33 @@
 //
 
 #import "GameCenterServicePlugin.h"
-
 #import "GameCenterManager.h"
+
+@interface GameCenterManager (DataLoader)
+-(void)loadLeaderboard:(NSString*)identifier WithCompletionHandler:(void (^)(NSArray *scores))completionHandler;
+@end
+
+@implementation GameCenterManager (DataLoader)
+
+-(void)loadLeaderboard:(NSString*)identifier WithCompletionHandler:(void (^)(NSArray *scores))completionHandler{
+    if (self.isGameCenterAvailable) {
+        GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] initWithPlayerIDs:[NSArray arrayWithObject:[self localPlayerId]]];
+        
+        [leaderboardRequest setTimeScope:GKLeaderboardTimeScopeAllTime];
+        [leaderboardRequest setPlayerScope:GKLeaderboardPlayerScopeGlobal];
+        [leaderboardRequest setIdentifier:identifier];
+        
+        [leaderboardRequest loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error) {
+            if (error == nil) {
+                completionHandler(scores);
+            }
+        }];
+         
+    }
+}
+
+
+@end
 
 @interface GameCenterServicePlugin()<GameCenterManagerDelegate>
 - (void)showAchievements;
@@ -31,6 +56,14 @@ SHARED_INSTANCE_IMPL
     [[GameCenterManager sharedManager] presentLeaderboardsOnViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
+- (void)submitScore:(int)score forLeaderboard:(NSString*)leaderboardID{
+    [[GameCenterManager sharedManager] saveAndReportScore:score leaderboard:leaderboardID sortOrder:GameCenterSortOrderHighToLow];
+}
+
+- (void)unlockAchievement:(NSString*)achievementID withProgress:(int)percent{
+    [[GameCenterManager sharedManager] saveAndReportAchievement:achievementID percentComplete:percent shouldDisplayNotification:percent>=100];
+}
+
 #pragma mark - Lua interfaces
 
 +(void)showAchievements:(NSDictionary*)info{
@@ -42,10 +75,27 @@ SHARED_INSTANCE_IMPL
     [[GameCenterServicePlugin sharedInstance] showLeaderboards];
 }
 
++(void)submitLeaderboardScore:(NSDictionary*)info{
+    [[GameCenterServicePlugin sharedInstance] submitScore:[[info objectForKey:@"score"] intValue] forLeaderboard:[info objectForKey:@"leaderboardID"]];
+}
+
++(void)unlockAchievement:(NSDictionary*)info{
+    [[GameCenterServicePlugin sharedInstance] unlockAchievement:[info objectForKey:@"achievementID"] withProgress:[[info objectForKey:@"percent"] intValue]];
+}
+
++(void)loadLeaderboardScore:(NSDictionary*)info{
+    
+    [[GameCenterManager sharedManager] loadLeaderboard:[info objectForKey:@"leaderboardID"] WithCompletionHandler:^(NSArray *data) {
+        NSLog(@"%@", data);
+    }];
+}
+
 #pragma mark -  GameCenter Manager Delegate
 
 - (void)gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController {
-    NSLog(@"Finished Presenting Authentication Controller");
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:gameCenterLoginController animated:YES completion:^{
+        NSLog(@"Finished Presenting Authentication Controller");
+    }];
 }
 
 - (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation {
