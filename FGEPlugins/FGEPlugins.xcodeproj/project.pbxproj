@@ -29,6 +29,10 @@
 		7FAD56F41B567DF1003A14C8 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD56EF1B567DF1003A14C8 /* GameCenterManager.m */; };
 		7FAD56F51B567DF1003A14C8 /* NSDataAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD56F11B567DF1003A14C8 /* NSDataAES256.m */; };
 		7FAD56F61B567DF1003A14C8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD56F31B567DF1003A14C8 /* Reachability.m */; };
+		7FB9EB971B8C4B0B00E2AED5 /* FacebookSharePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB9EB961B8C4B0B00E2AED5 /* FacebookSharePlugin.m */; };
+		7FB9EB9B1B8C4B5900E2AED5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB981B8C4B5900E2AED5 /* FBSDKCoreKit.framework */; };
+		7FB9EB9C1B8C4B5900E2AED5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB991B8C4B5900E2AED5 /* FBSDKLoginKit.framework */; };
+		7FB9EB9D1B8C4B5900E2AED5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB9A1B8C4B5900E2AED5 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -164,6 +168,11 @@
 		7FAD56F11B567DF1003A14C8 /* NSDataAES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAES256.m; sourceTree = "<group>"; };
 		7FAD56F21B567DF1003A14C8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		7FAD56F31B567DF1003A14C8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7FB9EB951B8C4B0B00E2AED5 /* FacebookSharePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSharePlugin.h; sourceTree = "<group>"; };
+		7FB9EB961B8C4B0B00E2AED5 /* FacebookSharePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSharePlugin.m; sourceTree = "<group>"; };
+		7FB9EB981B8C4B5900E2AED5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		7FB9EB991B8C4B5900E2AED5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		7FB9EB9A1B8C4B5900E2AED5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +180,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB9EB9B1B8C4B5900E2AED5 /* FBSDKCoreKit.framework in Frameworks */,
 				7F6130871B53707F000D2642 /* libcrypto.a in Frameworks */,
+				7FB9EB9C1B8C4B5900E2AED5 /* FBSDKLoginKit.framework in Frameworks */,
+				7FB9EB9D1B8C4B5900E2AED5 /* FBSDKShareKit.framework in Frameworks */,
 				7FAD56A01B56008C003A14C8 /* libTalkingDataGA.a in Frameworks */,
 				7FAD56B71B563689003A14C8 /* GoogleMobileAds.framework in Frameworks */,
 				7F6130891B53707F000D2642 /* libssl.a in Frameworks */,
@@ -224,6 +236,8 @@
 				7F612FF41B536F80000D2642 /* FGEPlugins.h */,
 				7F612FF61B536F80000D2642 /* FGEPlugins.m */,
 				7F43A0C31B53B3EA00BD2DDC /* common.h */,
+				7FB9EB951B8C4B0B00E2AED5 /* FacebookSharePlugin.h */,
+				7FB9EB961B8C4B0B00E2AED5 /* FacebookSharePlugin.m */,
 			);
 			path = FGEPlugins;
 			sourceTree = "<group>";
@@ -247,6 +261,9 @@
 		7F6130211B53707F000D2642 /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				7FB9EB981B8C4B5900E2AED5 /* FBSDKCoreKit.framework */,
+				7FB9EB991B8C4B5900E2AED5 /* FBSDKLoginKit.framework */,
+				7FB9EB9A1B8C4B5900E2AED5 /* FBSDKShareKit.framework */,
 				7FAD56ED1B567DF1003A14C8 /* GC Manager */,
 				7FAD56B61B563689003A14C8 /* GoogleMobileAds.framework */,
 				7FAD569D1B56008C003A14C8 /* TalkingData */,
@@ -486,6 +503,7 @@
 				7F6130931B53707F000D2642 /* RMStoreTransactionReceiptVerificator.m in Sources */,
 				7FAD56F51B567DF1003A14C8 /* NSDataAES256.m in Sources */,
 				7F6130171B536FA2000D2642 /* AppStoreIAPPlugin.mm in Sources */,
+				7FB9EB971B8C4B0B00E2AED5 /* FacebookSharePlugin.m in Sources */,
 				7FAD56F41B567DF1003A14C8 /* GameCenterManager.m in Sources */,
 				7F6130951B53707F000D2642 /* RMStoreUserDefaultsPersistence.m in Sources */,
 				7F61308B1B53707F000D2642 /* RMAppReceipt.m in Sources */,

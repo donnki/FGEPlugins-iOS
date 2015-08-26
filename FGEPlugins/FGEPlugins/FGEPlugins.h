@@ -13,6 +13,7 @@
 #import "StatisticPlugin.h"
 #import "AppStoreIAPPlugin.h"
 #import "GameCenterServicePlugin.h"
+#import "FacebookSharePlugin.h"
 
 @interface FGEPlugins : NSObject
 

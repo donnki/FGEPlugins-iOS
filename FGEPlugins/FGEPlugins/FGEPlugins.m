@@ -13,23 +13,25 @@
 @implementation FGEPlugins
 
 +(void)onCreate:(id)context{
-    if([[AppStoreIAPPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]){
+    if(AppStoreIAPPluginEnabled &&[[AppStoreIAPPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]){
         [[AppStoreIAPPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
     };
     
-    if ([[StatisticPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
+    if (StatisticPluginEnabled && [[StatisticPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
         [[StatisticPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
     }
     
-    if ([[AdmobPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
+    if (AdmobPluginEnabled && [[AdmobPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
         [[AdmobPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
     }
     
-    if ([[GameCenterServicePlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
+    if (GameCenterServicePluginEnabled && [[GameCenterServicePlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
         [[GameCenterServicePlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
     }
     
-    
+    if (FacebookSharePluginEnabled && [[FacebookSharePlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
+        [[FacebookSharePlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
+    }
 }
 +(void)onStart{
     

@@ -15,9 +15,10 @@
 
 @implementation GameCenterManager (DataLoader)
 
--(void)loadLeaderboard:(NSString*)identifier WithCompletionHandler:(void (^)(NSArray *scores))completionHandler{
+-(void)loadLeaderboard:(NSString*)identifier
+ WithCompletionHandler:(void (^)(NSArray *scores))completionHandler{
     if (self.isGameCenterAvailable) {
-        GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] initWithPlayerIDs:[NSArray arrayWithObject:[self localPlayerId]]];
+        GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] initWithPlayers:[NSArray arrayWithObject:[self localPlayerData]]];
         
         [leaderboardRequest setTimeScope:GKLeaderboardTimeScopeAllTime];
         [leaderboardRequest setPlayerScope:GKLeaderboardPlayerScopeGlobal];
@@ -32,6 +33,22 @@
     }
 }
 
+-(void)saveGameData:(NSDictionary*)dic
+           withName:(NSString*) name
+  completionHandler:(void (^)(GKSavedGame *savedGame, NSError *error))handler{
+    if (self.isGameCenterAvailable) {
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dic];
+        [[self localPlayerData] saveGameData:data withName:name completionHandler:handler];
+    }
+}
+
+- (void)loadGameData:(void (^)(NSArray *savedGames,
+                                                       NSError *error))handler{
+    if (self.isGameCenterAvailable) {
+        [[self localPlayerData] fetchSavedGamesWithCompletionHandler:handler];
+    }
+    
+}
 
 @end
 
@@ -45,6 +62,7 @@ SHARED_INSTANCE_IMPL
 
 -(void)onCreate:(id)context{
     [[GameCenterManager sharedManager] setDelegate:self];
+    NSLog(@"%@", [GameCenterManager sharedManager].delegate);
     [[GameCenterManager sharedManager] setupManager];
 }
 
@@ -84,10 +102,22 @@ SHARED_INSTANCE_IMPL
 }
 
 +(void)loadLeaderboardScore:(NSDictionary*)info{
-    
     [[GameCenterManager sharedManager] loadLeaderboard:[info objectForKey:@"leaderboardID"] WithCompletionHandler:^(NSArray *data) {
         NSLog(@"%@", data);
     }];
+}
+
++(void)saveGame:(NSDictionary*)info{
+    NSDictionary *data = [info objectForKey:@"data"];
+    id callback = [info objectForKey:@"callback"];
+
+    [[GameCenterManager sharedManager] saveGameData:data withName:GAMECENTER_SAVED_KEY completionHandler:callback];
+}
+
+
++(void)loadGame:(NSDictionary*)info{
+    id callback = [info objectForKey:@"callback"];
+    [[GameCenterManager sharedManager] loadGameData:callback];
 }
 
 #pragma mark -  GameCenter Manager Delegate

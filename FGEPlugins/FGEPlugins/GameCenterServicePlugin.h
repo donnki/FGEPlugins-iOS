@@ -43,4 +43,7 @@ SHARED_INSTANCE_DEF
 
 
 +(void)loadLeaderboardScore:(NSDictionary*)info;
+
++(void)loadGame:(NSDictionary*)info;
++(void)saveGame:(NSDictionary*)info;
 @end

@@ -9,11 +9,19 @@
 #ifndef FGEPlugins_common_h
 #define FGEPlugins_common_h
 
-#define TALKINGDATA_APP_ID @"3B8DCFBDE5D5B9858C1DB06D09CE0BC0"
-#define TALKINGDATA_CHANNEL_ID @"TEST_CHANNEL"
-#define ADMOB_INTERSTITIAL_ID @"ca-app-pub-2550536070025080/1660836858"
-#define GAMECENTER_LEADERBOARD_ID @"com.banabala.jellyddd.scoreleaderboard"
-#define GAMECENTER_ACHIEVEMENT_IDS @[@"com.banabala.jellyddd.achievement.bomb100"]
+#define AppStoreIAPPluginEnabled                    1
+#define StatisticPluginEnabled                      0
+#define AdmobPluginEnabled                          0
+#define GameCenterServicePluginEnabled              0
+#define FacebookSharePluginEnabled                  1
+
+
+#define TALKINGDATA_APP_ID              @"975F36485069F0D6AC98A258DC7BC106"
+#define TALKINGDATA_CHANNEL_ID          @"TEST_CHANNEL"
+#define ADMOB_INTERSTITIAL_ID           @"ca-app-pub-2550536070025080/1660836858"
+#define GAMECENTER_LEADERBOARD_ID       @"single_round_scores"
+#define GAMECENTER_ACHIEVEMENT_IDS      @[@"com.banabala.jellyddd.achievement.bomb100"]
+#define GAMECENTER_SAVED_KEY            @"savedData"
 
 typedef void(^operationCallback)(NSDictionary *param);
 @protocol PluginProtocol <NSObject>
@@ -31,7 +39,7 @@ typedef void(^operationCallback)(NSDictionary *param);
 static dispatch_once_t once;\
 static id sharedInstance;\
 dispatch_once(&once, ^{\
-    sharedInstance = [[self alloc] init];\
+sharedInstance = [[self alloc] init];\
 });\
 return sharedInstance;\
 }
