@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F05E3531B9C1C7D004C9B43 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F05E3521B9C1C7D004C9B43 /* libsqlite3.dylib */; };
+		7F05E3551B9C1CA0004C9B43 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F05E3541B9C1CA0004C9B43 /* CoreData.framework */; };
 		7F612F8F1B53557B000D2642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F612F8E1B53557B000D2642 /* main.m */; };
 		7F612F921B53557B000D2642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F612F911B53557B000D2642 /* AppDelegate.m */; };
 		7F612F951B53557B000D2642 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F612F941B53557B000D2642 /* ViewController.m */; };
@@ -16,6 +18,7 @@
 		7F612FA91B53557B000D2642 /* FGEPluginsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F612FA81B53557B000D2642 /* FGEPluginsDemoTests.m */; };
 		7F6131311B537204000D2642 /* libFGEPlugins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F61312E1B5371EB000D2642 /* libFGEPlugins.a */; };
 		7F6131341B537259000D2642 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6131331B537259000D2642 /* StoreKit.framework */; };
+		7F92E9291B8AFA4F006C98FC /* GCFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F92E9271B8AFA4F006C98FC /* GCFeatureViewController.m */; };
 		7FAD56A51B560EA9003A14C8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56A41B560EA9003A14C8 /* CoreTelephony.framework */; };
 		7FAD56A71B560EAF003A14C8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56A61B560EAF003A14C8 /* Security.framework */; };
 		7FAD56A91B560EB3003A14C8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56A81B560EB3003A14C8 /* libz.dylib */; };
@@ -29,6 +32,9 @@
 		7FAD56C51B563E2B003A14C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */; };
 		7FAD56C71B563E35003A14C8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56C61B563E35003A14C8 /* MessageUI.framework */; };
 		7FAD56F81B568023003A14C8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56F71B568023003A14C8 /* GameKit.framework */; };
+		7FB9EB911B8C4AC900E2AED5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB8E1B8C4AC900E2AED5 /* FBSDKCoreKit.framework */; };
+		7FB9EB921B8C4AC900E2AED5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB8F1B8C4AC900E2AED5 /* FBSDKLoginKit.framework */; };
+		7FB9EB931B8C4AC900E2AED5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB901B8C4AC900E2AED5 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F05E3521B9C1C7D004C9B43 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7F05E3541B9C1CA0004C9B43 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7F612F891B53557B000D2642 /* FGEPluginsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGEPluginsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F612F8D1B53557B000D2642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F612F8E1B53557B000D2642 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +72,8 @@
 		7F612FA81B53557B000D2642 /* FGEPluginsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGEPluginsDemoTests.m; sourceTree = "<group>"; };
 		7F6131281B5371EB000D2642 /* FGEPlugins.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FGEPlugins.xcodeproj; path = ../FGEPlugins/FGEPlugins.xcodeproj; sourceTree = "<group>"; };
 		7F6131331B537259000D2642 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7F92E9261B8AFA4F006C98FC /* GCFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFeatureViewController.h; sourceTree = "<group>"; };
+		7F92E9271B8AFA4F006C98FC /* GCFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCFeatureViewController.m; sourceTree = "<group>"; };
 		7FAD56A41B560EA9003A14C8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		7FAD56A61B560EAF003A14C8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7FAD56A81B560EB3003A14C8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -77,6 +87,10 @@
 		7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7FAD56C61B563E35003A14C8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7FAD56F71B568023003A14C8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		7FB9EB8E1B8C4AC900E2AED5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		7FB9EB8F1B8C4AC900E2AED5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		7FB9EB901B8C4AC900E2AED5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		7FCF1DFF1B8BFCB200A552FE /* FGEPluginsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FGEPluginsDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F05E3551B9C1CA0004C9B43 /* CoreData.framework in Frameworks */,
+				7F05E3531B9C1C7D004C9B43 /* libsqlite3.dylib in Frameworks */,
+				7FB9EB911B8C4AC900E2AED5 /* FBSDKCoreKit.framework in Frameworks */,
+				7FB9EB921B8C4AC900E2AED5 /* FBSDKLoginKit.framework in Frameworks */,
+				7FB9EB931B8C4AC900E2AED5 /* FBSDKShareKit.framework in Frameworks */,
 				7FAD56F81B568023003A14C8 /* GameKit.framework in Frameworks */,
 				7FAD56C71B563E35003A14C8 /* MessageUI.framework in Frameworks */,
 				7FAD56C51B563E2B003A14C8 /* AudioToolbox.framework in Frameworks */,
@@ -115,6 +134,11 @@
 		7F612F801B53557B000D2642 = {
 			isa = PBXGroup;
 			children = (
+				7F05E3541B9C1CA0004C9B43 /* CoreData.framework */,
+				7F05E3521B9C1C7D004C9B43 /* libsqlite3.dylib */,
+				7FB9EB8E1B8C4AC900E2AED5 /* FBSDKCoreKit.framework */,
+				7FB9EB8F1B8C4AC900E2AED5 /* FBSDKLoginKit.framework */,
+				7FB9EB901B8C4AC900E2AED5 /* FBSDKShareKit.framework */,
 				7FAD56F71B568023003A14C8 /* GameKit.framework */,
 				7FAD56C61B563E35003A14C8 /* MessageUI.framework */,
 				7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */,
@@ -148,6 +172,7 @@
 		7F612F8B1B53557B000D2642 /* FGEPluginsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7FCF1DFF1B8BFCB200A552FE /* FGEPluginsDemo.entitlements */,
 				7F612F901B53557B000D2642 /* AppDelegate.h */,
 				7F612F911B53557B000D2642 /* AppDelegate.m */,
 				7F612F931B53557B000D2642 /* ViewController.h */,
@@ -156,6 +181,8 @@
 				7F612F991B53557B000D2642 /* Images.xcassets */,
 				7F612F9B1B53557B000D2642 /* LaunchScreen.xib */,
 				7F612F8C1B53557B000D2642 /* Supporting Files */,
+				7F92E9261B8AFA4F006C98FC /* GCFeatureViewController.h */,
+				7F92E9271B8AFA4F006C98FC /* GCFeatureViewController.m */,
 			);
 			path = FGEPluginsDemo;
 			sourceTree = "<group>";
@@ -244,6 +271,11 @@
 					7F612F881B53557B000D2642 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = ZDL8F5JDN9;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					7F612FA11B53557B000D2642 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -312,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F612F951B53557B000D2642 /* ViewController.m in Sources */,
+				7F92E9291B8AFA4F006C98FC /* GCFeatureViewController.m in Sources */,
 				7F612F921B53557B000D2642 /* AppDelegate.m in Sources */,
 				7F612F8F1B53557B000D2642 /* main.m in Sources */,
 			);
@@ -439,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FGEPluginsDemo/FGEPluginsDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -450,7 +484,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pp3288/Developer/FasterGameEngine/FGEPlugins/ext/RMStore/Optional/openssl-1.0.1e/lib",
+					"$(SRCROOT)/../FGEPlugins/ext/RMStore/Optional/openssl-1.0.1e/lib",
+					"$(SRCROOT)/../FGEPlugins/ext/GTM/",
 				);
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FGEPluginsDemo/FGEPluginsDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -474,7 +510,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pp3288/Developer/FasterGameEngine/FGEPlugins/ext/RMStore/Optional/openssl-1.0.1e/lib",
+					"$(SRCROOT)/../FGEPlugins/ext/RMStore/Optional/openssl-1.0.1e/lib",
+					"$(SRCROOT)/../FGEPlugins/ext/GTM/",
 				);
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";

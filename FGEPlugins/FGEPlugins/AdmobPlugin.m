@@ -23,8 +23,9 @@
 
 SHARED_INSTANCE_IMPL
 
--(void)onCreate:(id)context{
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     [self newAdRequest];
+    return YES;
 }
 
 -(void)newAdRequest{

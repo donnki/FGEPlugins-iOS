@@ -7,13 +7,14 @@
 //
 
 #import "StatisticPlugin.h"
-
+#import <UIKit/UIKit.h>
 @implementation StatisticPlugin
 
 SHARED_INSTANCE_IMPL
 
--(void)onCreate:(id)context{
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     [TalkingDataGA onStart:TALKINGDATA_APP_ID withChannelId:TALKINGDATA_CHANNEL_ID];
+    return YES;
 }
 
 +(void)onStatisticEvent:(NSDictionary *)param{

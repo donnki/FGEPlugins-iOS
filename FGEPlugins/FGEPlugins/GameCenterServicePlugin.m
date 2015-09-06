@@ -60,10 +60,11 @@
 
 SHARED_INSTANCE_IMPL
 
--(void)onCreate:(id)context{
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     [[GameCenterManager sharedManager] setDelegate:self];
     NSLog(@"%@", [GameCenterManager sharedManager].delegate);
     [[GameCenterManager sharedManager] setupManager];
+    return YES;
 }
 
 - (void)showAchievements {

@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>{
+    IBOutlet UITextField *textField;
+    IBOutlet UIPickerView *languagePicker;
+    IBOutlet UISlider *slider;
+    IBOutlet UISlider *speedSlider;
+    
+    IBOutlet UILabel *label1, *label2;
+}
 
 
+-(IBAction)onDoSth:(id)sender;
+-(IBAction)onValueChanged:(id)sender;
 @end
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F05E3401B9C0FDD004C9B43 /* TagManagerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E33F1B9C0FDD004C9B43 /* TagManagerPlugin.m */; };
+		7F05E34E1B9C119B004C9B43 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F05E34D1B9C119B004C9B43 /* libGoogleAnalyticsServices.a */; };
 		7F43A0C71B53B5A300BD2DDC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F43A0C61B53B5A300BD2DDC /* MBProgressHUD.m */; };
 		7F612FF51B536F80000D2642 /* FGEPlugins.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F612FF41B536F80000D2642 /* FGEPlugins.h */; };
 		7F612FF71B536F80000D2642 /* FGEPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F612FF61B536F80000D2642 /* FGEPlugins.m */; };
@@ -49,6 +51,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F05E33E1B9C0FDD004C9B43 /* TagManagerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagManagerPlugin.h; sourceTree = "<group>"; };
+		7F05E33F1B9C0FDD004C9B43 /* TagManagerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagManagerPlugin.m; sourceTree = "<group>"; };
+		7F05E3481B9C1189004C9B43 /* TAGContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGContainer.h; sourceTree = "<group>"; };
+		7F05E3491B9C1189004C9B43 /* TAGContainerOpener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGContainerOpener.h; sourceTree = "<group>"; };
+		7F05E34A1B9C1189004C9B43 /* TAGDataLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGDataLayer.h; sourceTree = "<group>"; };
+		7F05E34B1B9C1189004C9B43 /* TAGLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGLogger.h; sourceTree = "<group>"; };
+		7F05E34C1B9C1189004C9B43 /* TAGManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGManager.h; sourceTree = "<group>"; };
+		7F05E34D1B9C119B004C9B43 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		7F05E3501B9C1C53004C9B43 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7F43A0C31B53B3EA00BD2DDC /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		7F43A0C51B53B5A300BD2DDC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		7F43A0C61B53B5A300BD2DDC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -183,6 +194,7 @@
 				7FB9EB9B1B8C4B5900E2AED5 /* FBSDKCoreKit.framework in Frameworks */,
 				7F6130871B53707F000D2642 /* libcrypto.a in Frameworks */,
 				7FB9EB9C1B8C4B5900E2AED5 /* FBSDKLoginKit.framework in Frameworks */,
+				7F05E34E1B9C119B004C9B43 /* libGoogleAnalyticsServices.a in Frameworks */,
 				7FB9EB9D1B8C4B5900E2AED5 /* FBSDKShareKit.framework in Frameworks */,
 				7FAD56A01B56008C003A14C8 /* libTalkingDataGA.a in Frameworks */,
 				7FAD56B71B563689003A14C8 /* GoogleMobileAds.framework in Frameworks */,
@@ -193,6 +205,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F05E3471B9C1189004C9B43 /* GTM */ = {
+			isa = PBXGroup;
+			children = (
+				7F05E34D1B9C119B004C9B43 /* libGoogleAnalyticsServices.a */,
+				7F05E3481B9C1189004C9B43 /* TAGContainer.h */,
+				7F05E3491B9C1189004C9B43 /* TAGContainerOpener.h */,
+				7F05E34A1B9C1189004C9B43 /* TAGDataLayer.h */,
+				7F05E34B1B9C1189004C9B43 /* TAGLogger.h */,
+				7F05E34C1B9C1189004C9B43 /* TAGManager.h */,
+				7F05E3501B9C1C53004C9B43 /* libsqlite3.dylib */,
+			);
+			path = GTM;
+			sourceTree = "<group>";
+		};
 		7F43A0C41B53B58F00BD2DDC /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +264,8 @@
 				7F43A0C31B53B3EA00BD2DDC /* common.h */,
 				7FB9EB951B8C4B0B00E2AED5 /* FacebookSharePlugin.h */,
 				7FB9EB961B8C4B0B00E2AED5 /* FacebookSharePlugin.m */,
+				7F05E33E1B9C0FDD004C9B43 /* TagManagerPlugin.h */,
+				7F05E33F1B9C0FDD004C9B43 /* TagManagerPlugin.m */,
 			);
 			path = FGEPlugins;
 			sourceTree = "<group>";
@@ -261,6 +289,7 @@
 		7F6130211B53707F000D2642 /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				7F05E3471B9C1189004C9B43 /* GTM */,
 				7FB9EB981B8C4B5900E2AED5 /* FBSDKCoreKit.framework */,
 				7FB9EB991B8C4B5900E2AED5 /* FBSDKLoginKit.framework */,
 				7FB9EB9A1B8C4B5900E2AED5 /* FBSDKShareKit.framework */,
@@ -499,6 +528,7 @@
 				7F6130911B53707F000D2642 /* RMStoreTransaction.m in Sources */,
 				7F612FF71B536F80000D2642 /* FGEPlugins.m in Sources */,
 				7F6130971B53707F000D2642 /* RMStore.m in Sources */,
+				7F05E3401B9C0FDD004C9B43 /* TagManagerPlugin.m in Sources */,
 				7F6130191B536FA2000D2642 /* CommonHelper.m in Sources */,
 				7F6130931B53707F000D2642 /* RMStoreTransactionReceiptVerificator.m in Sources */,
 				7FAD56F51B567DF1003A14C8 /* NSDataAES256.m in Sources */,
@@ -612,6 +642,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ext/RMStore/Optional/openssl-1.0.1e/lib",
 					"$(PROJECT_DIR)/ext/TalkingData",
+					"$(PROJECT_DIR)/ext/GTM",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,6 +663,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ext/RMStore/Optional/openssl-1.0.1e/lib",
 					"$(PROJECT_DIR)/ext/TalkingData",
+					"$(PROJECT_DIR)/ext/GTM",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

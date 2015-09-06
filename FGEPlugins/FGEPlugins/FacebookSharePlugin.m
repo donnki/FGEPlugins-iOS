@@ -12,9 +12,11 @@
 
 SHARED_INSTANCE_IMPL
 
--(void)onCreate:(id)context{
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     [FBSDKLikeControl class];
     [FBSDKLoginButton class];
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
 }
 
 +(void)fbShare:(NSDictionary*)info{

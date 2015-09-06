@@ -7,20 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
+#import "common.h"
 #import "AdmobPlugin.h"
 #import "CommonHelper.h"
 #import "StatisticPlugin.h"
 #import "AppStoreIAPPlugin.h"
 #import "GameCenterServicePlugin.h"
 #import "FacebookSharePlugin.h"
+#import "TagManagerPlugin.h"
+
 
 @interface FGEPlugins : NSObject
 
-+(void)onCreate:(id)context;
-+(void)onStart;
-+(void)onStop;
-+(void)onDestory;
-+(void)onResume;
-+(void)onPause;
++(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 @end

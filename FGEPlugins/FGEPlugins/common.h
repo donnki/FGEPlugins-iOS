@@ -8,12 +8,22 @@
 
 #ifndef FGEPlugins_common_h
 #define FGEPlugins_common_h
+#import <UIKit/UIKit.h>
 
-#define AppStoreIAPPluginEnabled                    1
-#define StatisticPluginEnabled                      0
-#define AdmobPluginEnabled                          0
-#define GameCenterServicePluginEnabled              0
-#define FacebookSharePluginEnabled                  1
+//#define AppStoreIAPPluginEnabled                    0
+//#define StatisticPluginEnabled                      0
+//#define AdmobPluginEnabled                          0
+//#define GameCenterServicePluginEnabled              0
+//#define FacebookSharePluginEnabled                  0
+//#define TagManagerPluginEnabled                     1
+enum PluginSettings{
+    AppStoreIAPPluginEnabled = NO,
+    StatisticPluginEnabled = NO,
+    AdmobPluginEnabled = NO,
+    GameCenterServicePluginEnabled = YES,
+    FacebookSharePluginEnabled = NO,
+    TagManagerPluginEnabled = YES
+};
 
 
 #define TALKINGDATA_APP_ID              @"975F36485069F0D6AC98A258DC7BC106"
@@ -22,16 +32,14 @@
 #define GAMECENTER_LEADERBOARD_ID       @"single_round_scores"
 #define GAMECENTER_ACHIEVEMENT_IDS      @[@"com.banabala.jellyddd.achievement.bomb100"]
 #define GAMECENTER_SAVED_KEY            @"savedData"
+#define GTM_CONTAINER_ID                @"GTM-PD9BHS"
+#define GTM_TAG_CALLBACKS               @[@"test"]
+#define GTM_MACRO_CALLBACKS             @[@"testMacro"]
 
 typedef void(^operationCallback)(NSDictionary *param);
 @protocol PluginProtocol <NSObject>
 @optional
--(void)onCreate:(id)context;
--(void)onStart;
--(void)onStop;
--(void)onDestory;
--(void)onResume;
--(void)onPause;
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 @end
 
 #define SHARED_INSTANCE_DEF +(id)sharedInstance;

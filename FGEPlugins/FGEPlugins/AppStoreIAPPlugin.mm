@@ -25,20 +25,15 @@
 
 @implementation AppStoreIAPPlugin
 
--(void)onCreate:(id)context{
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     const BOOL iOS7OrHigher = floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1;
     _receiptVerificator = iOS7OrHigher ? [[RMStoreAppReceiptVerificator alloc] init] : [[RMStoreTransactionReceiptVerificator alloc] init];
     [RMStore defaultStore].receiptVerificator = _receiptVerificator;
     
     _persistence = [[RMStoreKeychainPersistence alloc] init];
     [RMStore defaultStore].transactionPersistor = _persistence;
+    return YES;
 }
--(void)onStart{}
--(void)onStop{}
--(void)onDestory{}
--(void)onResume{}
--(void)onPause{}
-
 
 + (id)sharedInstance {
     static dispatch_once_t once;

@@ -12,42 +12,31 @@
 
 @implementation FGEPlugins
 
-+(void)onCreate:(id)context{
-    if(AppStoreIAPPluginEnabled &&[[AppStoreIAPPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]){
-        [[AppStoreIAPPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
++(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    if(AppStoreIAPPluginEnabled &&[[AppStoreIAPPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
+        [[AppStoreIAPPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     };
     
-    if (StatisticPluginEnabled && [[StatisticPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
-        [[StatisticPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
+    if (StatisticPluginEnabled && [[StatisticPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
+        [[StatisticPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     }
     
-    if (AdmobPluginEnabled && [[AdmobPlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
-        [[AdmobPlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
+    if (AdmobPluginEnabled && [[AdmobPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
+        [[StatisticPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     }
     
-    if (GameCenterServicePluginEnabled && [[GameCenterServicePlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
-        [[GameCenterServicePlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
+    if (GameCenterServicePluginEnabled && [[GameCenterServicePlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
+        [[GameCenterServicePlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     }
     
-    if (FacebookSharePluginEnabled && [[FacebookSharePlugin sharedInstance] respondsToSelector:@selector(onCreate:)]) {
-        [[FacebookSharePlugin sharedInstance] performSelector:@selector(onCreate:) withObject:context];
+    if (FacebookSharePluginEnabled && [[FacebookSharePlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
+        return [[FacebookSharePlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     }
-}
-+(void)onStart{
     
+    if (TagManagerPluginEnabled && [[TagManagerPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
+        return [[TagManagerPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    }
+    return YES;
 }
-+(void)onStop{
-    
-}
-+(void)onDestory{
-    
-}
-+(void)onResume{
-    
-}
-+(void)onPause{
-    
-}
-
 
 @end
