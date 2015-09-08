@@ -39,4 +39,10 @@
     return YES;
 }
 
++(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    if (FacebookSharePluginEnabled && [[FacebookSharePlugin sharedInstance] respondsToSelector:@selector(application:openURL:sourceApplication:annotation:)]) {
+        return [[FacebookSharePlugin sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    }
+    return YES;
+}
 @end

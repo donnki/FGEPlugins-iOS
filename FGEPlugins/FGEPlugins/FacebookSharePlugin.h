@@ -11,10 +11,11 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "common.h"
+typedef void(^ShareCallback)(BOOL success, NSString *response);
 
 @interface FacebookSharePlugin : NSObject<PluginProtocol, FBSDKSharingDelegate>
 
 SHARED_INSTANCE_DEF
-
+@property(nonatomic, strong) ShareCallback callback;
 +(void)fbShare:(NSDictionary*)info;
 @end

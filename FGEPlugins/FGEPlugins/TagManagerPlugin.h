@@ -13,9 +13,18 @@
 #import "TAGLogger.h"
 #import "TAGManager.h"
 #import "TAGDataLayer.h"
+
+typedef void(^TagCallback)(NSString* tagName, NSDictionary *param);
+
+@interface CustomTagHandler : NSObject <TAGFunctionCallTagHandler>
+@property(nonatomic, strong) TagCallback callback;
+-(id)initWithCallback:(id)callback;
+@end
+
 @interface TagManagerPlugin : NSObject<PluginProtocol,TAGContainerOpenerNotifier>
 @property(nonatomic, retain) TAGManager *tagManager;
 @property(nonatomic, retain) TAGContainer *container;
+@property(nonatomic) BOOL isContainnerAvailable;
 SHARED_INSTANCE_DEF
 
 
@@ -24,4 +33,5 @@ SHARED_INSTANCE_DEF
 -(void)pushData:(NSDictionary*)dic;
 
 +(void)refresh;
++(void)pushEvent:(NSDictionary*)info;
 @end

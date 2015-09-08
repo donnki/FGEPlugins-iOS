@@ -19,6 +19,17 @@ SHARED_INSTANCE_IMPL
                                     didFinishLaunchingWithOptions:launchOptions];
 }
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
 +(void)fbShare:(NSDictionary*)info{
     /*
     FBSDKSharePhoto *photo = [FBSDKSharePhoto photoWithImage:[info objectForKey:@"image"] userGenerated:YES];
@@ -52,10 +63,10 @@ SHARED_INSTANCE_IMPL
       */
  
     FBSDKShareLinkContent *content2 = [[FBSDKShareLinkContent alloc] init];
-    content2.imageURL = [NSURL URLWithString:@"http://img6.douban.com/icon/ul3811658-63.jpg"];
-    content2.contentURL = [NSURL URLWithString:@"http://www.luciolagames.com/"];
-    content2.contentTitle = @"Welcome";
-    content2.contentDescription = @"Enjoy yourself~";
+    content2.imageURL = [NSURL URLWithString:[info objectForKey:@"imageURL"]];
+    content2.contentURL = [NSURL URLWithString:[info objectForKey:@"contentURL"]];
+    content2.contentTitle = [info objectForKey:@"title"];
+    content2.contentDescription = [info objectForKey:@"desc"];
     
 //    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
 //    dialog.shareContent = content2;
@@ -110,6 +121,10 @@ SHARED_INSTANCE_IMPL
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results
 {
     NSLog(@"completed share:%@", results);
+    if (self.callback) {
+        self.callback(YES, @"success");
+        self.callback = nil;
+    }
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error
@@ -120,11 +135,19 @@ SHARED_INSTANCE_IMPL
     NSString *title = error.userInfo[FBSDKErrorLocalizedTitleKey] ?: @"Oops!";
     
     [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    if (self.callback) {
+        self.callback(NO, [title stringByAppendingString:message]);
+        self.callback = nil;
+    }
 }
 
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer
 {
     NSLog(@"share cancelled");
+    if (self.callback) {
+        self.callback(NO, @"USER CANNCEL");
+        self.callback = nil;
+    }
 }
 
 

@@ -9,12 +9,20 @@
 #import "TagManagerPlugin.h"
 #import <UIKit/UIKit.h>
 
-@interface CustomTagHandler : NSObject <TAGFunctionCallTagHandler>
-@end
+
 @implementation CustomTagHandler
+-(id)initWithCallback:(id)callback{
+    if (self = [super init]) {
+        self.callback = callback;
+    }
+    return self;
+}
 - (void)execute:(NSString *)tagName parameters:(NSDictionary *)parameters {
     NSLog(@"Custom function call tag :%@ is fired", tagName);
     // Other code firing this custom tag.
+    if (self.callback) {
+        self.callback(tagName, parameters);
+    }
 }
 @end
 @interface CustomMacroHandler : NSObject <TAGFunctionCallMacroHandler>
@@ -78,22 +86,23 @@ SHARED_INSTANCE_IMPL
 }
 
 - (void)containerAvailable:(TAGContainer *)container {
-    // Important note: containerAvailable may be called from a different thread, marshall the
+        // Important note: containerAvailable may be called from a different thread, marshall the
     // notification back to the main thread to avoid a race condition with viewDidAppear.
     dispatch_async(dispatch_get_main_queue(), ^{
         self.container = container;
+        self.isContainnerAvailable = YES;
         // Register two custom function call macros to the container.
-        for (NSString *callback in GTM_MACRO_CALLBACKS) {
-            [self.container registerFunctionCallMacroHandler:[[CustomMacroHandler alloc] init]
-                                                    forMacro:callback];
-
-        }
+//        for (NSString *callback in GTM_MACRO_CALLBACKS) {
+//            [self.container registerFunctionCallMacroHandler:[[CustomMacroHandler alloc] init]
+//                                                    forMacro:callback];
+//            
+//        }
         
-        for (NSString *callback in GTM_TAG_CALLBACKS) {
-            [self.container registerFunctionCallTagHandler:[[CustomTagHandler alloc] init]
-                                                    forTag:callback];
-            
-        }
+//        for (NSString *callback in GTM_TAG_CALLBACKS) {
+//            [self.container registerFunctionCallTagHandler:[[CustomTagHandler alloc] init]
+//                                                    forTag:callback];
+//            
+//        }
     });
 }
 
@@ -153,7 +162,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
 
 -(void)refreshData{
     [self.container refresh];
-
+    
 }
 
 -(void)pushEvent:(NSString*)event{
@@ -168,4 +177,15 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
     [[TagManagerPlugin sharedInstance] refresh];
 }
 
++(void)pushEvent:(NSDictionary*)info{
+    NSString* event = [info objectForKey:@"eventId"];
+    NSString* data = [info objectForKey:@"data"];
+    NSMutableDictionary *dic = [NSJSONSerialization JSONObjectWithData:[data dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+    if (dic.count > 0) {
+        [dic setObject:event forKey:@"event"];
+        [[TagManagerPlugin sharedInstance] pushData:dic];
+    }else{
+        [[TagManagerPlugin sharedInstance] pushEvent:event];
+    }
+}
 @end

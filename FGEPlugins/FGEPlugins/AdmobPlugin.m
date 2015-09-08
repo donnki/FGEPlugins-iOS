@@ -39,11 +39,11 @@ SHARED_INSTANCE_IMPL
     if (self.interstitial.isReady) {
         [self.interstitial presentFromRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
     } else {
-//        [[[UIAlertView alloc] initWithTitle:@"Interstitial not ready"
-//                                    message:@"The interstitial didn't finish loading or failed to load"
-//                                   delegate:self
-//                          cancelButtonTitle:@"Drat"
-//                          otherButtonTitles:nil] show];
+        //        [[[UIAlertView alloc] initWithTitle:@"Interstitial not ready"
+        //                                    message:@"The interstitial didn't finish loading or failed to load"
+        //                                   delegate:self
+        //                          cancelButtonTitle:@"Drat"
+        //                          otherButtonTitles:nil] show];
         NSLog(@"[Warning]Ad not loaded...");
         if (!_loadingAd) {
             [self newAdRequest];

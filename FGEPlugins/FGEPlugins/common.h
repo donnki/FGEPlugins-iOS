@@ -18,10 +18,10 @@
 //#define TagManagerPluginEnabled                     1
 enum PluginSettings{
     AppStoreIAPPluginEnabled = NO,
-    StatisticPluginEnabled = NO,
+    StatisticPluginEnabled = YES,
     AdmobPluginEnabled = NO,
     GameCenterServicePluginEnabled = YES,
-    FacebookSharePluginEnabled = NO,
+    FacebookSharePluginEnabled = YES,
     TagManagerPluginEnabled = YES
 };
 
