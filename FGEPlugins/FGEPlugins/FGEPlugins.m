@@ -13,36 +13,37 @@
 @implementation FGEPlugins
 
 +(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    if(AppStoreIAPPluginEnabled &&[[AppStoreIAPPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
-        [[AppStoreIAPPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    };
+    BOOL ret = YES;
+#ifdef AppStoreIAPPluginEnabled
+    [[AppStoreIAPPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+#endif
+
+#ifdef StatisticPluginEnabled
+    [[StatisticPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+#endif
+
+#ifdef AdmobPluginEnabled
+    [[AdmobPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+#endif
     
-    if (StatisticPluginEnabled && [[StatisticPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
-        [[StatisticPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    }
+#ifdef GameCenterServicePluginEnabled
+    [[GameCenterServicePlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+#endif
     
-    if (AdmobPluginEnabled && [[AdmobPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
-        [[StatisticPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    }
+#ifdef FacebookSharePluginEnabled
+    ret = ret && [[FacebookSharePlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+#endif
     
-    if (GameCenterServicePluginEnabled && [[GameCenterServicePlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
-        [[GameCenterServicePlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    }
-    
-    if (FacebookSharePluginEnabled && [[FacebookSharePlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
-        return [[FacebookSharePlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    }
-    
-    if (TagManagerPluginEnabled && [[TagManagerPlugin sharedInstance] respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]) {
-        return [[TagManagerPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    }
-    return YES;
+#ifdef TagManagerPluginEnabled
+    ret = ret &&  [[TagManagerPlugin sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+#endif
+    return ret;
 }
 
 +(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    if (FacebookSharePluginEnabled && [[FacebookSharePlugin sharedInstance] respondsToSelector:@selector(application:openURL:sourceApplication:annotation:)]) {
-        return [[FacebookSharePlugin sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-    }
+#ifdef FacebookSharePluginEnabled
+    return [[FacebookSharePlugin sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+#endif
     return YES;
 }
 @end

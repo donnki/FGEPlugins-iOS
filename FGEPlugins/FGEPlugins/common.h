@@ -10,20 +10,21 @@
 #define FGEPlugins_common_h
 #import <UIKit/UIKit.h>
 
-//#define AppStoreIAPPluginEnabled                    0
-//#define StatisticPluginEnabled                      0
-//#define AdmobPluginEnabled                          0
-//#define GameCenterServicePluginEnabled              0
-//#define FacebookSharePluginEnabled                  0
-//#define TagManagerPluginEnabled                     1
-enum PluginSettings{
-    AppStoreIAPPluginEnabled = NO,
-    StatisticPluginEnabled = YES,
-    AdmobPluginEnabled = NO,
-    GameCenterServicePluginEnabled = YES,
-    FacebookSharePluginEnabled = YES,
-    TagManagerPluginEnabled = YES
-};
+//#define AppStoreIAPPluginEnabled
+#define StatisticPluginEnabled
+//#define AdmobPluginEnabled
+#define GameCenterServicePluginEnabled
+#define FacebookSharePluginEnabled
+#define TagManagerPluginEnabled
+
+//enum PluginSettings{
+//    AppStoreIAPPluginEnabled = NO,
+//    StatisticPluginEnabled = YES,
+//    AdmobPluginEnabled = NO,
+//    GameCenterServicePluginEnabled = YES,
+//    FacebookSharePluginEnabled = YES,
+//    TagManagerPluginEnabled = YES
+//};
 
 
 #define TALKINGDATA_APP_ID              @"975F36485069F0D6AC98A258DC7BC106"
