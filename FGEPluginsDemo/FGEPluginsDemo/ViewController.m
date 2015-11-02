@@ -26,10 +26,16 @@ static AVSpeechSynthesizer *synthesizer;
     [TagManagerPlugin refresh];
 }
 
+-(void)onContainerRefreshed:(NSNotification*)nofiy{
+    NSDictionary* dic = [nofiy object];
+    NSLog(@"%@", dic);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onContainerRefreshed:) name:GTM_CONTAINER_REFRESHED object:nil];
+    [[TagManagerPlugin sharedInstance] doInit:@[@"description", @"button_word", @"gift_type", @"expire_date", @"LuckPlayers"]];
     _products = @[@"com.banabala.jellyddd.sandyclockdozen",
                            @"com.banabala.jellyddd.sandyclockfew",
                            @"com.banabala.jellyddd.sandyclockmany"];
@@ -43,20 +49,20 @@ static AVSpeechSynthesizer *synthesizer;
 //    [button addTarget:self action:@selector(onDoSth:) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:button];
     
-    synthesizer = [[AVSpeechSynthesizer alloc] init];
-    
-    int t = 0;
-    for (AVSpeechSynthesisVoice *voice in [AVSpeechSynthesisVoice speechVoices]) {
-        if([voice.language isEqualToString:@"en-US"]){
-            selectedIndex = t;
-            break;
-        }
-        t++;
-    }
+//    synthesizer = [[AVSpeechSynthesizer alloc] init];
+//    
+//    int t = 0;
+//    for (AVSpeechSynthesisVoice *voice in [AVSpeechSynthesisVoice speechVoices]) {
+//        if([voice.language isEqualToString:@"en-US"]){
+//            selectedIndex = t;
+//            break;
+//        }
+//        t++;
+//    }
 
-     [languagePicker selectRow:selectedIndex inComponent:0 animated:YES];
+//     [languagePicker selectRow:selectedIndex inComponent:0 animated:YES];
     
-    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickView)]];
+//    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickView)]];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Play" style:UIBarButtonItemStylePlain target:self action:@selector(onDoSth:)];
 }
 

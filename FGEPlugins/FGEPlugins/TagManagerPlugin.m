@@ -63,7 +63,7 @@ SHARED_INSTANCE_IMPL
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     self.tagManager = [TAGManager instance];
-    
+    _containerKeys = [[NSMutableArray alloc] init];
     // Modify the log level of the logger to print out not only
     // warning and error messages, but also verbose, debug, info messages.
     [self.tagManager.logger setLogLevel:kTAGLoggerLogLevelVerbose];
@@ -77,12 +77,17 @@ SHARED_INSTANCE_IMPL
     }
     
     // Open a container.
-    [TAGContainerOpener openContainerWithId:GTM_CONTAINER_ID
-                                 tagManager:self.tagManager
-                                   openType:kTAGOpenTypePreferNonDefault
-                                    timeout:nil
-                                   notifier:self];
+    
+//    [TAGContainerOpener openContainerWithId:GTM_CONTAINER_ID
+//                                 tagManager:self.tagManager
+//                                   openType:kTAGOpenTypePreferFresh
+//                                    timeout:nil
+//                                   notifier:self];
     return YES;
+}
+-(void)doInit:(NSArray *)keys{
+    _containerKeys = keys;
+    [self.tagManager openContainerById:GTM_CONTAINER_ID callback:self];
 }
 
 - (void)containerAvailable:(TAGContainer *)container {
@@ -91,6 +96,8 @@ SHARED_INSTANCE_IMPL
     dispatch_async(dispatch_get_main_queue(), ^{
         self.container = container;
         self.isContainnerAvailable = YES;
+        
+        
         // Register two custom function call macros to the container.
 //        for (NSString *callback in GTM_MACRO_CALLBACKS) {
 //            [self.container registerFunctionCallMacroHandler:[[CustomMacroHandler alloc] init]
@@ -106,7 +113,22 @@ SHARED_INSTANCE_IMPL
     });
 }
 
-
+-(void)containerRefreshSuccess:(TAGContainer *)container refreshType:(TAGContainerCallbackRefreshType)refreshType{
+    self.container = container;
+    if (refreshType == kTAGContainerCallbackRefreshTypeNetwork) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        for (NSString *key in self.containerKeys) {
+            [dic setObject:[container stringForKey:key] forKey:key];
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:GTM_CONTAINER_REFRESHED object:dic];
+    }else{
+        [self refreshData];
+    }
+}
+-(void)containerRefreshFailure:(TAGContainer *)container failure:(TAGContainerCallbackRefreshFailure)failure refreshType:(TAGContainerCallbackRefreshType)refreshType{
+}
+-(void)containerRefreshBegin:(TAGContainer *)container refreshType:(TAGContainerCallbackRefreshType)refreshType{
+}
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -174,7 +196,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
 }
 
 +(void)refresh{
-    [[TagManagerPlugin sharedInstance] refresh];
+    [[TagManagerPlugin sharedInstance] refreshData];
 }
 
 +(void)pushEvent:(NSDictionary*)info{

@@ -31,10 +31,10 @@
 		7FAD56C31B563E10003A14C8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56BF1B563DCE003A14C8 /* EventKit.framework */; };
 		7FAD56C51B563E2B003A14C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */; };
 		7FAD56C71B563E35003A14C8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56C61B563E35003A14C8 /* MessageUI.framework */; };
-		7FAD56F81B568023003A14C8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD56F71B568023003A14C8 /* GameKit.framework */; };
 		7FB9EB911B8C4AC900E2AED5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB8E1B8C4AC900E2AED5 /* FBSDKCoreKit.framework */; };
 		7FB9EB921B8C4AC900E2AED5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB8F1B8C4AC900E2AED5 /* FBSDKLoginKit.framework */; };
 		7FB9EB931B8C4AC900E2AED5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB9EB901B8C4AC900E2AED5 /* FBSDKShareKit.framework */; };
+		7FFFDB2A1BE30363002C8A15 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFFDB291BE30363002C8A15 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,11 +86,11 @@
 		7FAD56C11B563E08003A14C8 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7FAD56C61B563E35003A14C8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7FAD56F71B568023003A14C8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		7FB9EB8E1B8C4AC900E2AED5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		7FB9EB8F1B8C4AC900E2AED5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		7FB9EB901B8C4AC900E2AED5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		7FCF1DFF1B8BFCB200A552FE /* FGEPluginsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FGEPluginsDemo.entitlements; sourceTree = "<group>"; };
+		7FFFDB291BE30363002C8A15 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,6 @@
 				7FB9EB911B8C4AC900E2AED5 /* FBSDKCoreKit.framework in Frameworks */,
 				7FB9EB921B8C4AC900E2AED5 /* FBSDKLoginKit.framework in Frameworks */,
 				7FB9EB931B8C4AC900E2AED5 /* FBSDKShareKit.framework in Frameworks */,
-				7FAD56F81B568023003A14C8 /* GameKit.framework in Frameworks */,
 				7FAD56C71B563E35003A14C8 /* MessageUI.framework in Frameworks */,
 				7FAD56C51B563E2B003A14C8 /* AudioToolbox.framework in Frameworks */,
 				7FAD56C31B563E10003A14C8 /* EventKit.framework in Frameworks */,
@@ -118,6 +117,7 @@
 				7FAD56A51B560EA9003A14C8 /* CoreTelephony.framework in Frameworks */,
 				7F6131341B537259000D2642 /* StoreKit.framework in Frameworks */,
 				7F6131311B537204000D2642 /* libFGEPlugins.a in Frameworks */,
+				7FFFDB2A1BE30363002C8A15 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,12 +134,12 @@
 		7F612F801B53557B000D2642 = {
 			isa = PBXGroup;
 			children = (
+				7FFFDB291BE30363002C8A15 /* GameKit.framework */,
 				7F05E3541B9C1CA0004C9B43 /* CoreData.framework */,
 				7F05E3521B9C1C7D004C9B43 /* libsqlite3.dylib */,
 				7FB9EB8E1B8C4AC900E2AED5 /* FBSDKCoreKit.framework */,
 				7FB9EB8F1B8C4AC900E2AED5 /* FBSDKLoginKit.framework */,
 				7FB9EB901B8C4AC900E2AED5 /* FBSDKShareKit.framework */,
-				7FAD56F71B568023003A14C8 /* GameKit.framework */,
 				7FAD56C61B563E35003A14C8 /* MessageUI.framework */,
 				7FAD56C41B563E2B003A14C8 /* AudioToolbox.framework */,
 				7FAD56C11B563E08003A14C8 /* EventKitUI.framework */,
@@ -272,6 +272,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = ZDL8F5JDN9;
 						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};

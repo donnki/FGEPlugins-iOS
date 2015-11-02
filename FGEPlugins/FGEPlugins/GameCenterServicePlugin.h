@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "common.h"
 
+typedef void(^GameCenterLoginSuccessCallback)(NSString *playerID);
 @interface GameCenterServicePlugin : NSObject<PluginProtocol>
+@property(nonatomic, strong) GameCenterLoginSuccessCallback callback;
 
 SHARED_INSTANCE_DEF
 

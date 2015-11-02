@@ -134,6 +134,10 @@ SHARED_INSTANCE_IMPL
     GKLocalPlayer *player = [[GameCenterManager sharedManager] localPlayerData];
     if (player) {
         NSLog(@"Hello, %@", player.displayName);
+        if (self.callback) {
+            self.callback(player.playerID);
+            self.callback = nil;
+        }
     }else{
         NSLog(@"No GameCenter player found.");
     }

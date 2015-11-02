@@ -18,12 +18,14 @@ typedef void(^TagCallback)(NSString* tagName, NSDictionary *param);
 
 @interface CustomTagHandler : NSObject <TAGFunctionCallTagHandler>
 @property(nonatomic, strong) TagCallback callback;
+
 -(id)initWithCallback:(id)callback;
 @end
 
-@interface TagManagerPlugin : NSObject<PluginProtocol,TAGContainerOpenerNotifier>
+@interface TagManagerPlugin : NSObject<PluginProtocol,TAGContainerOpenerNotifier,TAGContainerCallback>
 @property(nonatomic, retain) TAGManager *tagManager;
 @property(nonatomic, retain) TAGContainer *container;
+@property(nonatomic, strong, readonly) NSArray *containerKeys;
 @property(nonatomic) BOOL isContainnerAvailable;
 SHARED_INSTANCE_DEF
 
@@ -31,6 +33,7 @@ SHARED_INSTANCE_DEF
 -(void)refreshData;
 -(void)pushEvent:(NSString*)event;
 -(void)pushData:(NSDictionary*)dic;
+-(void)doInit:(NSArray*)keys;
 
 +(void)refresh;
 +(void)pushEvent:(NSDictionary*)info;

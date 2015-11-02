@@ -11,10 +11,10 @@
 #import <UIKit/UIKit.h>
 
 //#define AppStoreIAPPluginEnabled
-#define StatisticPluginEnabled
+//#define StatisticPluginEnabled
 //#define AdmobPluginEnabled
-#define GameCenterServicePluginEnabled
-#define FacebookSharePluginEnabled
+//#define GameCenterServicePluginEnabled
+//#define FacebookSharePluginEnabled
 #define TagManagerPluginEnabled
 
 //enum PluginSettings{
@@ -36,6 +36,8 @@
 #define GTM_CONTAINER_ID                @"GTM-PD9BHS"
 #define GTM_TAG_CALLBACKS               @[@"test"]
 #define GTM_MACRO_CALLBACKS             @[@"testMacro"]
+
+#define GTM_CONTAINER_REFRESHED         @"GTM_CONTAINER_REFRESHED"
 
 typedef void(^operationCallback)(NSDictionary *param);
 @protocol PluginProtocol <NSObject>
